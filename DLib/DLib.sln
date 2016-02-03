@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FF5D39CD-8EAD-40BD-9E3C-155D3716FD07}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLib", "DLib\DLib.csproj", "{20AAFC74-01DE-4F6A-890E-DC272F03AFAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLibTestWebApp", "DLibTestWebApp\DLibTestWebApp.csproj", "{0C2E4EDA-B52C-4D0B-8CB1-EE5C44079DA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20AAFC74-01DE-4F6A-890E-DC272F03AFAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20AAFC74-01DE-4F6A-890E-DC272F03AFAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20AAFC74-01DE-4F6A-890E-DC272F03AFAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20AAFC74-01DE-4F6A-890E-DC272F03AFAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C2E4EDA-B52C-4D0B-8CB1-EE5C44079DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C2E4EDA-B52C-4D0B-8CB1-EE5C44079DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C2E4EDA-B52C-4D0B-8CB1-EE5C44079DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C2E4EDA-B52C-4D0B-8CB1-EE5C44079DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

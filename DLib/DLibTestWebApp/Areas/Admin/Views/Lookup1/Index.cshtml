@@ -1,0 +1,58 @@
+﻿@using DLibTestWebApp.Data
+@model IEnumerable<tblkp_Lookup1>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="h2">tblkp_Lookup1 dictionary</h2>
+
+
+<table class="table table-responsive table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Active</th>
+            <th>Created On</th>
+            <th>Created By</th>
+            <th>Modified On</th>
+            <th>Modified By</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (tblkp_Lookup1 singleModel in Model)
+            {
+                <tr>
+                    <td>@singleModel.value</td>
+                    <td>
+                        @{
+                if (singleModel.is_active)
+                {
+                    <i class="fa fa-check-circle-o"></i>
+                }
+                else
+                {
+                    <i class="fa fa-circle-o"></i>
+                }
+                        }
+                    </td>
+                    <td>@singleModel.created_on</td>
+                    <td>@singleModel.created_by</td>
+                    <td>@singleModel.modified_on</td>
+                    <td>@singleModel.modified_by</td>
+                    <td><a class="btn btn-primary btn-sm" href="@Url.Action("Edit","Lookup1",new {area = "Admin"})">Edit</a> | <a class="btn btn-danger btn-sm" href="@Url.Action("Toggle","Lookup1",new {area = "Admin", id = singleModel.id})">Active On/Off</a></td> 
+                </tr>
+            }
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7"><button class="btn btn-success pull-right" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus-circle"></i> Add a new entry</button></td>
+        </tr>
+    </tfoot>
+</table>
+
+@{
+    Html.RenderPartial("_BootstrapModalCreateLookup", new tblkp_Lookup1 { is_active = true });
+}
