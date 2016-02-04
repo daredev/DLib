@@ -40,8 +40,6 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="@Url.Action("Index","Home", new {area = ""})">Home</a></li>
-                    <li><a href="@Url.Action("Index","Home", new {area = ""})">Link1</a></li>
-                    <li><a href="@Url.Action("Index","Home", new {area = ""})">Link2</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -49,7 +47,7 @@
                             <li><a href="@Url.Action("Index","Lookup1",new {area = "Admin"})">Lookup1</a></li>
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Different Stuff</li>
-                            <li><a href="@Url.Action("Index","Lookup2", new {area = "Admin"})">Lookup2</a></li>
+                            <li><a href="@Url.Action("Index","Lookup2", new {area = "Admin"})">Lookup2 <em>(Not yet implemented)</em></a></li>
                         </ul>
                     </li>
                 </ul>

@@ -6,7 +6,7 @@ using DLib.Model;
 
 namespace DLib.MVC.Controllers
 {
-    public abstract class GenericLookupController<TModelType> : Controller where TModelType : GenericLookupModel
+    public abstract class GenericLookupController<TModelType> : Controller where TModelType : GenericLookupModel, new()
     {
         private readonly DbContext _db;
 
@@ -77,8 +77,9 @@ namespace DLib.MVC.Controllers
 
         public virtual ActionResult Create()
         {
+            TModelType newLookup = new TModelType();
 // ReSharper disable Mvc.ViewNotResolved
-            return View("Create");
+            return View("Create", newLookup);
 // ReSharper restore Mvc.ViewNotResolved
         }
 

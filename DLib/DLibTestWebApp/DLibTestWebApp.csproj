@@ -349,6 +349,7 @@
     <Content Include="Views\Shared\_BootstrapModalCreateLookup.cshtml" />
     <Content Include="Areas\Admin\Views\Lookup1\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Lookup1\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Lookup1\Create.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

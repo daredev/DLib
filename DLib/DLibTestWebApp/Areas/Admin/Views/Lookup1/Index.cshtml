@@ -48,13 +48,13 @@
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="7"><button class="btn btn-success pull-right" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus-circle"></i> Add a new entry</button></td>
+            <td colspan="7"><button class="btn btn-success btnCreate pull-right" data-toggle="modal" data-target="#createModal" data-url="@Url.Action("Create","Lookup1",new {area = "Admin"})"><i class="fa fa-plus-circle"></i> Add a new entry</button></td>
         </tr>
     </tfoot>
 </table>
 
 @{
-    Html.RenderPartial("_BootstrapModalCreateLookup", new tblkp_Lookup1 { is_active = true });
+    Html.RenderPartial("_BootstrapModalCreateLookup");
     Html.RenderPartial("_BootstrapModalDeleteLookup");
     Html.RenderPartial("_BootstrapModalEditLookup");
 }
@@ -82,6 +82,17 @@
                         $('#divEditContent').html(data);
 
                         $('#editModal').modal('show');
+                    });
+                });
+            });
+
+            $('.btnCreate').each(function () {
+                $(this).click(function () {
+                    var url = $(this).data('url');
+                    $.get(url, function (data) {
+                        $('#divCreateContent').html(data);
+
+                        $('#createModal').modal('show');
                     });
                 });
             });
