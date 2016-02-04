@@ -41,7 +41,7 @@
                     <td>@singleModel.created_by</td>
                     <td>@singleModel.modified_on</td>
                     <td>@singleModel.modified_by</td>
-                    <td><a class="btn btn-primary btn-sm" href="@Url.Action("Edit","Lookup1",new {area = "Admin"})"><i class="fa fa-edit"></i> Edit</a> | <a class="btn btn-warning btn-sm" href="@Url.Action("Toggle","Lookup1",new {area = "Admin", id = singleModel.id})"><i class="fa fa-check-circle-o"></i> Active On/Off</a> | <button class="btn btn-danger btn-sm btnDelete" data-url="@Url.Action("Delete","Lookup1",new {area = "Admin", id = singleModel.id})"><i class="fa fa-warning"></i> Delete</button></td> 
+                    <td><button class="btn btn-primary btn-sm btnEdit" data-url="@Url.Action("Edit","Lookup1",new {area = "Admin", id=singleModel.id})"><i class="fa fa-edit"></i> Edit</button> | <a class="btn btn-warning btn-sm" href="@Url.Action("Toggle","Lookup1",new {area = "Admin", id = singleModel.id})"><i class="fa fa-check-circle-o"></i> Active On/Off</a> | <button class="btn btn-danger btn-sm btnDelete" data-url="@Url.Action("Delete","Lookup1",new {area = "Admin", id = singleModel.id})"><i class="fa fa-warning"></i> Delete</button></td> 
                 </tr>
             }
         }
@@ -56,12 +56,14 @@
 @{
     Html.RenderPartial("_BootstrapModalCreateLookup", new tblkp_Lookup1 { is_active = true });
     Html.RenderPartial("_BootstrapModalDeleteLookup");
+    Html.RenderPartial("_BootstrapModalEditLookup");
 }
 
 @section body
 {
     <script type="text/javascript">
         $(document).ready(function () {
+
             $('.btnDelete').each(function () {
                 $(this).click(function() {
                     var url = $(this).data('url');
@@ -72,6 +74,18 @@
                     });
                 });
             });
+
+            $('.btnEdit').each(function () {
+                $(this).click(function () {
+                    var url = $(this).data('url');
+                    $.get(url, function (data) {
+                        $('#divEditContent').html(data);
+
+                        $('#editModal').modal('show');
+                    });
+                });
+            });
+
         });
     </script>
 }

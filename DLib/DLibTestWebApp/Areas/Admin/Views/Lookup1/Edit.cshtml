@@ -1,0 +1,71 @@
+﻿@model DLibTestWebApp.Data.tblkp_Lookup1
+
+<form class="form-horizontal" id="frmEdit" action="@Url.Action("Edit")" method="POST">
+    @Html.AntiForgeryToken()
+        <div class="form-group">
+            @Html.LabelFor(x => Model.value, new { @class = "col-lg-2 col-md-2 col-sm-2 control-label" })
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                @Html.TextBoxFor(x => Model.value, new { @class = "form-control", @placeholder = "New item name here" })
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 text-danger">
+                @Html.ValidationMessageFor(x => Model.value)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => Model.is_active, new { @class = "col-lg-2 col-md-2 col-sm-2 control-label" })
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                @Html.CheckBoxFor(x => Model.is_active)
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 text-danger">
+                @Html.ValidationMessageFor(x => Model.is_active)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => Model.created_by, new { @class = "col-lg-2 col-md-2 col-sm-2 control-label" })
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                @Html.TextBoxFor(x => Model.created_by, new { @class = "form-control", @Value = HttpContext.Current.User.Identity.Name })
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 text-danger">
+                @Html.ValidationMessageFor(x => Model.created_by)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => Model.created_on, new { @class = "col-lg-2 col-md-2 col-sm-2 control-label" })
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                @Html.TextBoxFor(x => Model.created_on, new { @class = "form-control", @Value = DateTime.Now })
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 text-danger">
+                @Html.ValidationMessageFor(x => Model.created_on)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => Model.modified_by, new { @class = "col-lg-2 col-md-2 col-sm-2 control-label" })
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                @Html.TextBoxFor(x => Model.modified_by, new { @class = "form-control", @Value = HttpContext.Current.User.Identity.Name })
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 text-danger">
+                @Html.ValidationMessageFor(x => Model.modified_by)
+            </div>
+        </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => Model.modified_on, new { @class = "col-lg-2 col-md-2 col-sm-2 control-label" })
+        <div class="col-lg-7 col-md-7 col-sm-7">
+            @Html.TextBoxFor(x => Model.modified_on, new { @class = "form-control", @Value = DateTime.Now })
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 text-danger">
+            @Html.ValidationMessageFor(x => Model.modified_on)
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <input type="submit" class="btn btn-primary pull-right" value="Submit" />
+            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</form>

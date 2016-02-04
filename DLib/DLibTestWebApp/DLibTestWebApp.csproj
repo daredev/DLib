@@ -348,6 +348,7 @@
     <Content Include="Scripts\Site.js" />
     <Content Include="Views\Shared\_BootstrapModalCreateLookup.cshtml" />
     <Content Include="Areas\Admin\Views\Lookup1\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Lookup1\Edit.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -434,6 +435,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_BootstrapModalDeleteLookup.cshtml" />
+    <Content Include="Views\Shared\_BootstrapModalEditLookup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
