@@ -154,17 +154,29 @@ namespace DLib.MVC.Controllers
 // ReSharper restore Mvc.ViewNotResolved
         }
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+//        [HttpPost, ActionName("Delete")]
+//        [ValidateAntiForgeryToken]
+//        public virtual ActionResult DeleteConfirmed(int id)
+//        {
+//            TModelType lookup = _db.Set<TModelType>().Find(id);
+//            _db.Set<TModelType>().Remove(lookup);
+//            _db.SaveChanges();
+//// ReSharper disable Mvc.ActionNotResolved
+//            return RedirectToAction("Index");
+//// ReSharper restore Mvc.ActionNotResolved
+//        }
+
+        [HttpGet]
         public virtual ActionResult DeleteConfirmed(int id)
         {
             TModelType lookup = _db.Set<TModelType>().Find(id);
             _db.Set<TModelType>().Remove(lookup);
             _db.SaveChanges();
-// ReSharper disable Mvc.ActionNotResolved
+            // ReSharper disable Mvc.ActionNotResolved
             return RedirectToAction("Index");
-// ReSharper restore Mvc.ActionNotResolved
+            // ReSharper restore Mvc.ActionNotResolved
         }
+
 
         protected override void Dispose(bool disposing)
         {

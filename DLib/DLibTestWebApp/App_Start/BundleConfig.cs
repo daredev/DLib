@@ -43,7 +43,7 @@ namespace DLibTestWebApp
 
             bundles.Add(new StyleBundle("~/Content/datatables_css").Include(
                 //"~/Content/jquery.dataTables.css",
-                "~/Content/dataTables.bootstrap.css"
+                "~/Content/DataTables/dataTables.bootstrap.css"
                 ));
 
             #endregion
@@ -65,8 +65,8 @@ namespace DLibTestWebApp
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
-                      "~/Scripts/jquery.dataTables.js",
-                      "~/Scripts/dataTables.bootstrap.js"
+                      "~/Scripts/DataTables/jquery.dataTables.js",
+                      "~/Scripts/DataTables/dataTables.bootstrap.js"
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/scripts").Include("~/Scripts/Site.js"));
